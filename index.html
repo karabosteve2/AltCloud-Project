@@ -1,0 +1,236 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head> 
+  <meta charset="UTF-8"> 
+  <title>The Future of Cloud-Powered Solutions</title> 
+  <style>
+    body { 
+      background-color: #1a202c; 
+      color: white; 
+      font-family: sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      display: flex; 
+      align-items: center; /* Vertically centers content */
+      justify-content: center; /* Horizontally centers content */
+      height: 100vh; /* Sets height to full viewport */
+      flex-direction: column; /* Arranges children in a column */
+    }
+
+    .box { 
+      background-color: #2d3748; 
+      padding: 20px; 
+      border-radius: 10px; 
+      width: 100%; /* Makes box take full width */
+      max-width: 800px; /* Sets a maximum width */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+      text-align: center; /* Centers text inside the box */
+      opacity: 0; /* Starts invisible for animation */
+      animation: show 1s ease-in-out forwards; /* Animates box appearance */
+      transition: filter 0.3s ease; /* Smooth transition for blur effect */
+    }
+
+    .box:hover { /* Styles when hovering over the box */
+      box-shadow: 0 0 20px 5px rgb(87, 106, 118); /* Adds a glow effect */
+    }
+
+    .blur { /* Class to blur the main box */
+      filter: blur(5px); 
+    }
+
+    h1 { 
+      font-size: 36px; 
+      margin-bottom: 10px; 
+    }
+
+    h2 { 
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    h3 { 
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    h4 {
+      text-align: center; 
+      font-size: 20px;
+      margin: 40px 0 10px;
+    }
+
+    p { 
+      font-size: 18px;
+      color: #e2e8f0;
+      line-height: 1.9;
+      text-align: left;
+    }
+    .highlight { 
+      color: #1e79d4; /* Highlight color for emphasis */
+      font-weight: bold; /* Makes highlighted text bold */
+    }
+
+    button { 
+      background-color: #4a5568;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover { /* Styles for button hover */
+      background-color: #718096;
+    }
+
+    .modal { /* Styles for modal overlays */
+      position: fixed; /* Fixed position over the page */
+      top: 0; /* Start at top */
+      left: 0; /* Start at left */
+      height: 100vh; /* Full viewport height */
+      width: 100vw; /* Full viewport width */
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+      display: none; /* Hidden by default */
+      align-items: center; /* Center modal content vertically */
+      justify-content: center; /* Center modal content horizontally */
+      z-index: 999; /* Puts modal above other content */
+    }
+
+    .modal-content { /* Styles for the modal content box */
+      background-color: #2d3748;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 90%;
+      text-align: left;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .close-btn { /* Styles for the close button in modals */
+      background-color: #e53e3e;
+      margin-top: 20px;
+    }
+
+    @keyframes show { /* Animation for showing the main box */
+      from {
+        opacity: 0; /* Start invisible */
+        transform: translateY(150px); /* Start lower on the page */
+      }
+      to {
+        opacity: 1; /* End fully visible */
+        transform: translateY(0); /* End at original position */
+      }
+    }
+
+    #logoContainer {
+  width: 200px; /* adjust as needed */
+  margin-bottom: 20px;
+  overflow: visible;
+}
+
+#logo {
+  width: 100%;
+  border-radius: 10%; /* circle */
+  pointer-events: none; /* prevents interaction */
+  transform: scale(1.2); /* zoom in 20% */
+  animation: slideLeftRight 3s ease-in-out infinite alternate;
+}
+
+@keyframes slideLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(50px); /* moves 50px to the right */
+  }
+}
+
+  </style>
+</head>
+
+<body> 
+  <div id="logoContainer">
+  <img src="kayhub.png" alt="Logo" id="logo" />
+</div>
+  <div id="mainBox" class="box"> 
+    <h1>Karabo Malatji</h1> 
+    <h2>Lead Cloud Engineer</h2> 
+    <h3>The Future of Cloud-Powered Solutions</h3>
+    <p>
+      We use cloud technology to give communities secure, scalable, and real-time tools for improving logistics
+      and public services.
+      It's not just about the cloud, it’s also about the impact it brings to people's lives, local economies, and
+      how we solve everyday challenges with technology.
+    </p>
+    <h4>Professional Bio</h4> 
+    <button onclick="openModal('skillsModal')">SKILLS</button> <!-- Button to open Skills modal -->
+    <button onclick="openModal('projectsModal')">PROJECTS</button> <!-- Button to open Projects modal -->
+    <button onclick="openModal('educationModal')">EDUCATION</button> <!-- Button to open Education modal -->
+  </div>
+
+  <!-- Skills Modal -->
+  <div id="skillsModal" class="modal"> 
+    <div class="modal-content"> 
+      <h4>SKILLS</h4> 
+      <p>
+        I have a little experience coding  with Python, HTML, CSS, and basic JavaScript and basic Linux.<br>
+        I’m getting comfortable using the Linux terminal, setting up web servers with Nginx, and deploying websites to the
+        cloud using AWS EC2.
+      </p>
+      <button class="close-btn" onclick="closeModal('skillsModal')">Close</button> <!-- Close button for modal -->
+    </div>
+  </div>
+
+
+  <div id="projectsModal" class="modal"> 
+    <div class="modal-content"> 
+      <h4>PAST PROJECT</h4> 
+      <p>
+        I’ve built and deployed dynamic landing pages using HTML, CSS, and Nginx on AWS cloud servers.<br>
+        I’ve configured reverse proxies and worked on setting up secure, production-ready environments for web
+        applications.<br><br>
+        During a <span class="highlight">WeThinkCode</span> 1 Week software development bootcamp, I solved code quiz using Python and worked on
+        collaborative coding exercises and completed hands-on projects..<br>
+       
+      </p>
+      <button class="close-btn" onclick="closeModal('projectsModal')">Close</button> <!-- Close button for modal -->
+    </div>
+  </div>
+
+ 
+  <div id="educationModal" class="modal"> 
+    <div class="modal-content"> 
+      <h4>EDUCATION</h4> 
+      <p>
+        I’m currently studying Cloud Engineering at AltSchool of Engineering, where I’m learning about cloud
+        Engineering, web technologies, and DevOps practices.<br><br>
+        I’m also part of the FNB App Academy, a free, online coding program offered by First National Bank (FNB) 
+        aimed at equipping individuals with app development skills.<br><br>
+
+        I hold a Higher Certificate in System Engineering from Richfield, where I gained practical knowledge in foundation of information technology,
+        i equiped troubleshooting, and computer hardware/software skills.<br>
+      </p>
+      <button class="close-btn" onclick="closeModal('educationModal')">Close</button> <!-- Close button for modal -->
+    </div>
+  </div>
+
+  <script>
+    // Function to open a modal by its ID and blur the main box
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex"; // Show the modal
+      document.getElementById("mainBox").classList.add("blur"); // Add blur to main box
+    }
+
+    // Function to close a modal by its ID and remove blur from the main box
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none"; // Hide the modal
+      document.getElementById("mainBox").classList.remove("blur"); // Remove blur from main box
+    }
+  </script>
+</body>
+
+</html> 
